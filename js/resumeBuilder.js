@@ -13,9 +13,9 @@ var bio ={
     "bioPic": "images/bioPic.jpg"
 }             
 var formattedName = HTMLheaderName.replace("%data%",bio.name);
-$("#header").prepend(formattedName);
+$("#resumeName").append(formattedName);
 var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-$("#header").prepend(formattedRole);
+$("#resumeName").append(formattedRole);
 
 var formatedMobile =HTMLmobile.replace("%data%",bio.contact.mobile);
 $("#topContacts").append(formatedMobile);
@@ -23,6 +23,8 @@ var formattedEmail =HTMLemail.replace("%data%",bio.contact.email);
 $("#topContacts").append(formattedEmail);
 var formattedGithub =HTMLgithub.replace("%data%",bio.contact.github);
 $("#topContacts").append(formattedGithub);
+var formattedlocation =HTMLlocation.replace("%data%",bio.contact.location);
+$("#topContacts").append(formattedlocation);
 
 var formattedWelcomeMessage =HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 $("#header").append(formattedWelcomeMessage);
@@ -40,6 +42,14 @@ if(bio.skills.length > 0){
     $("#skills").append(formattedSkill2);
         
 }
+/* This section is for the footer contact*/
+
+$("#footerContacts").append(formatedMobile);
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedGithub);
+$("#footerContacts").append(formattedlocation);
+
+
 /*==============================================*/
 
 /* This is about my work experience */
@@ -184,12 +194,9 @@ $("#education h2").append(formattedonlineUrl);
 
 
 /*================================================================================*/
-//  
-// $("#mapdiv h2").append("Where i have worked");
-//googleMap.append(<img scr='images/bioPic.jpg'/>);
-//
-//
-//
+ /*This section is for the google map area*/
+
+$("#map").append(googleMap);
 
 
 
